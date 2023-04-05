@@ -1,6 +1,6 @@
 # Endpoint Coding Challenge
 
-To start this project locally, run `npm run start`
+To start this project locally, first run `npm install` and then run `npm run start`
 
 You can view this project locally at `localhost:3000`
 
