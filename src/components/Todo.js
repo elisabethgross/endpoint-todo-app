@@ -15,6 +15,9 @@ function Todo() {
     }
   }
 
+  // set property isOverdue if dueDate is the same day or before today
+  // sort overdue, completed and remaining by date
+  // order todos by overdue, remaining and completed
   const muxData = (todos) => {
     const today = moment.now()
     const mappedTodos = todos.map(todo => {
@@ -32,6 +35,7 @@ function Todo() {
     return [...overdueTodos, ...remainingTodos, ...completedTodos]
   }
 
+  // fetch the todos data
   function fetchData () {
     fetch(url, {
       method: 'GET',
@@ -51,27 +55,9 @@ function Todo() {
     fetchData()
   }, []);
 
-  function handleChange(e, id) {
-    const action = !!e.target.checked
-    const url = 'https://944ba3c5-94c3-4369-a9e6-a509d65912e2.mock.pstmn.io/patch/'
-
-    fetch(`${url}${id}`, {
-      method: 'PATCH',
-      headers: {
-        "X-Api-Key": "PMAK-5ef63db179d23c004de50751-10300736bc550d2a891dc4355aab8d7a5c"
-      },
-      body: JSON.stringify({
-        'isComplete': action
-      })
-    })
-    .then(() => {
-      fetchData()
-    })
-  }
-
   return (
     <div className='todo-container'>
-      {data ? data.map(todo => <TodoItem key={todo.id} todo={todo} handleChange={handleChange}></TodoItem>) : 'Loading...'}
+      {data ? data.map(todo => <TodoItem key={todo.id} todoData={todo}></TodoItem>) : 'Loading...'}
     </div>
   );
 }
