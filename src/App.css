@@ -27,6 +27,12 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .todo-item {
+    width: 95%;
+  }
+}
+
 .todo-item p {
   margin: 0px;
 }
