@@ -1,3 +1,15 @@
+# Endpoint Coding Challenge
+
+To start this project locally, run `npm run start`
+
+You can view this project locally at `localhost:3000`
+
+I used create react app to initialize this app.
+
+I mostly modified the `src/components` folder (includes `Todo.js` and `TodoItem.js`) and additionally, added some custom css in `App.css`.
+
+Enjoy!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
